@@ -1,16 +1,12 @@
-Notes for vision processing for the robot
-
-
+General notes:
 
 
 
 ----------------------------------
 
+Notes for Video streaming node and its usage:
 
-
-Video streaming node and its usage:
-
-source code and documentation:
+Source code and documentation:
 
 http://wiki.ros.org/video_stream_opencv
 
@@ -30,7 +26,7 @@ To view image published on any topic of ros:
 
     rosrun image_view image_view image:=<topic_name>
 
- example
+ Example
 
     rosrun image_view image_view image:=/camera/image_raw
     
