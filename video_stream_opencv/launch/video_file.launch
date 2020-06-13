@@ -6,11 +6,11 @@
         <arg name="camera_name" value="videofile" />
         <!-- full path to the video file -->
         <!-- wget http://techslides.com/demos/sample-videos/small.mp4 -O /tmp/small.mp4 -->
-        <arg name="video_stream_provider" value="/tmp/small.mp4" />
+        <arg name="video_stream_provider" value="/home/animesh/Downloads/20200529_193746.mp4" />
         <!-- set camera fps to (video files not affected) -->
         <!-- <arg name="set_camera_fps" value="30"/> -->
         <!-- set buffer queue size of frame capturing to -->
-        <arg name="buffer_queue_size" value="1000" />
+        <arg name="buffer_queue_size" value="1" />
         <!-- throttling the querying of frames to -->
         <arg name="fps" value="30" />
         <!-- setting frame_id -->
@@ -25,6 +25,6 @@
         <!-- enable looping playback -->
         <arg name="loop_videofile" value="true" />
         <!-- visualize on an image_view window the stream generated -->
-        <arg name="visualize" value="true" />
+        <arg name="visualize" value="false" />
    </include>
 </launch>

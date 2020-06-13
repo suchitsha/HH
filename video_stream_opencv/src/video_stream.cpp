@@ -262,6 +262,7 @@ int main(int argc, char** argv)
     }
 
     cv::Mat frame;
+    cv::Mat OutputFrame;
     sensor_msgs::ImagePtr msg;
     sensor_msgs::CameraInfo cam_info_msg;
     std_msgs::Header header;
@@ -291,7 +292,12 @@ int main(int argc, char** argv)
                 // Flip the image if necessary
                 if (flip_image)
                     cv::flip(frame, frame, flip_value);
-                msg = cv_bridge::CvImage(header, "bgr8", frame).toImageMsg();
+                if(video_stream_provider_type == "videofile")   
+/* By default videofiles shot in potrait modes are anticlockwise inverted by the  CV::VideoCapture. So a rotation mechanism is applied here 
+ for those videos */
+                	cv::rotate(frame, OutputFrame,0);
+                
+                msg = cv_bridge::CvImage(header, "bgr8", OutputFrame).toImageMsg();
                 // Create a default camera info if we didn't get a stored one on initialization
                 if (cam_info_msg.distortion_model == ""){
                     ROS_WARN_STREAM("No calibration file given, publishing a reasonable default camera info.");
